@@ -1,0 +1,17 @@
+<section id="campuses" class="container">
+    <h1>All students</h1>
+
+    {{#each students}}
+      <div class="campus">
+      <h3>Student name: {{lastName}}, {{firstName}}</h3>
+      <p>Email: {{email}}</p>
+      <ul>
+        <li>ImageUrl: {{imageUrl}}</li>
+        <li>gpa: {{gpa}}</li>
+        <li></li>
+      </ul>
+    </div>
+    {{else}}
+      <p>No students available</p>
+    {{/each}}
+  </section>

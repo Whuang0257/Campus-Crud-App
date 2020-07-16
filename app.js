@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => res.render('index'));
 
 app.use('/campuses', require('./routes/campuses'));
+app.use('/students', require('./routes/students'));
 
 const PORT = process.env.PORT || 5000;
 

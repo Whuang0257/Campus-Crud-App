@@ -13,9 +13,9 @@ router.get('/', (req, res) =>
     .catch(err => res.render('error', {error: err})));
 
 
-router.get('/add', (req, res) => res.render('add'));
+router.get('/addcampus', (req, res) => res.render('addcampus'));
 
-router.post('/add', (req, res) => {
+router.post('/addcampus', (req, res) => {
   let { name, imageUrl, address, description } = req.body;
   let errors = [];
 
@@ -26,10 +26,13 @@ router.post('/add', (req, res) => {
   if(!address) {
     errors.push({ text: 'Please add a address' });
   }
+  if(!imageUrl) {
+    imageUrl = 'https://via.placeholder.com/140x100';
+  }
 
   // Check for errors
   if(errors.length > 0) {
-    res.render('add', {
+    res.render('addcampus', {
       errors, name, imageUrl, address, description
     });
   } else {
