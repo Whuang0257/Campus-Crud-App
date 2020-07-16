@@ -65,9 +65,14 @@ header nav li {
 
 header.inner {
   background: var(--bg-color);
-  border-bottom: 4px solid var(--primary-color);
   position: relative;
-  box-shadow: var(--box-shadow);
+}
+
+.campus {
+  background: grey;
+  color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .campus ul {
@@ -78,19 +83,6 @@ header.inner {
 .campus li {
   margin-right: 0.5rem;
   padding: 0.6rem;
-}
-
-.form-wrap.reg-form,
-.form-wrap.login-form {
-  width: 60%;
-}
-
-.form-wrap .btn {
-  margin-top: 1rem;
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-size: 18px;
 }
 
 .input-box {
