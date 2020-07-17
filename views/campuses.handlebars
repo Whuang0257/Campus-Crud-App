@@ -1,15 +1,16 @@
-<section id="campuses" class="container">
+<section id="campuses" class="singlecontainer">
     <h1>All campuses</h1>
 
     {{#each campuses}}
       <div class="campus">
-      <h3>Campus Name:{{name}}</h3>
-      <p>Address: {{address}}</p>
+
       <ul>
-        <li>ImageUrl: {{imageUrl}}</li>
-        <li>Description: {{description}}</li>
-        <li></li>
+        <li><img src ='{{imageUrl}}'></a></li>
       </ul>
+
+      <p>
+      <a href="/campuses/view/{{id}}">Campus Name:{{name}}</a>
+      </p>
     </div>
     {{else}}
       <p>No campuses available</p>

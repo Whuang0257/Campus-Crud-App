@@ -1,0 +1,25 @@
+<section id="campuses" class="container">
+    <h1>Campus</h1>
+
+    {{#each campuses}}
+    <div class="campus">
+    <ul>
+        <img src ='{{imageUrl}}'></a>
+        <p>Campus Name:{{name}}
+        <br>
+        Address:{{address}}
+        <br>
+    </ul>
+        <p>Description: {{description}}</p>
+      <br>
+        <a href="/campuses/view/{{id}}/editcampus">Edit</a>
+        <br>
+
+        <form method='POST' action ='/campuses/view/{{id}}?_method=DELETE'>
+        <button type = 'submit'> Delete </button>
+      </form>
+    </div>
+    {{else}}
+      <p>No campuses available</p>
+    {{/each}}
+  </section>

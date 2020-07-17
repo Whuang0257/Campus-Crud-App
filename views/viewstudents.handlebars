@@ -1,0 +1,23 @@
+<section id="campuses" class="container">
+    <h1>Student</h1>
+
+    {{#each students}}
+      <div class="campus">
+      <h3>Student name: {{lastName}}, {{firstName}}</h3>
+      <p>Email: {{email}}</p>
+      <p>gpa: {{gpa}}</p>
+      <ul>
+        <img src ='{{imageUrl}}'>
+        <li></li>
+      </ul>
+      <a href="/students/view/{{id}}/editstudent">Edit</a>
+      <br>
+      <form method='POST' action ='/students/view/{{id}}?_method=DELETE'>
+        <button type = 'submit'> Delete </button>
+      </form>
+      </p>
+    </div>
+    {{else}}
+      <p>No students available</p>
+    {{/each}}
+  </section>

@@ -31,7 +31,14 @@ a:hover {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 800px;
+  padding: 1rem 4rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.singlecontainer {
+  max-width: 350px;
   padding: 1rem 4rem;
   margin: auto;
   overflow: hidden;

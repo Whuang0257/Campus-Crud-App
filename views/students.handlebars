@@ -1,15 +1,14 @@
-<section id="campuses" class="container">
+<section id="campuses" class="singlecontainer">
     <h1>All students</h1>
 
     {{#each students}}
       <div class="campus">
-      <h3>Student name: {{lastName}}, {{firstName}}</h3>
-      <p>Email: {{email}}</p>
       <ul>
-        <li>ImageUrl: {{imageUrl}}</li>
-        <li>gpa: {{gpa}}</li>
-        <li></li>
+        <img src ='{{imageUrl}}'>
       </ul>
+      <br>
+      <a href ="/students/view/{{id}}">Student name: {{lastName}}, {{firstName}}</a>
+      <br>
     </div>
     {{else}}
       <p>No students available</p>
