@@ -36,6 +36,9 @@ app.get('/', (req, res) => res.render('index'));
 app.use('/campuses', require('./routes/campuses'));
 app.use('/students', require('./routes/students'));
 
+app.use('/students', require('./routes/campuses'));
+app.use('/campuses', require('./routes/students'));
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));

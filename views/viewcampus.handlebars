@@ -7,6 +7,8 @@
         <img src ='{{imageUrl}}'></a>
         <p>Campus Name:{{name}}
         <br>
+        Campus ID:{{id}}
+        <br>
         Address:{{address}}
         <br>
     </ul>
@@ -14,7 +16,14 @@
       <br>
         <a href="/campuses/view/{{id}}/editcampus">Edit</a>
         <br>
-
+        <form action="/campuses/view/{{id}}/addstudent" method="POST">
+        <label for="campusname">Add Student</label>
+        <br>
+          <input type="text" name="studentname" id="studentname" placeholder="student name">
+          <br>
+          <input type="submit" value="Add Student">
+        </form>
+        <br>
         <form method='POST' action ='/campuses/view/{{id}}?_method=DELETE'>
         <button type = 'submit'> Delete </button>
       </form>
