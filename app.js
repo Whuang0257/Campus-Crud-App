@@ -5,8 +5,10 @@ const path = require('path');
 const Handlebars = require('handlebars')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
+
 // Database
 const db = require('./config/database');
+const methodOverride = require('method-override');
 
 // Test DB
 db.authenticate()
@@ -21,15 +23,16 @@ app.engine('handlebars', expressHandlebars ({
 }));
 app.set('view engine', 'handlebars');
 
+app.use(methodOverride('_method'));
+
 // Body Parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Index route
+// Routes
 app.get('/', (req, res) => res.render('index'));
-
 app.use('/campuses', require('./routes/campuses'));
 app.use('/students', require('./routes/students'));
 

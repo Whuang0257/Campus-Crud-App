@@ -7,7 +7,10 @@
           <p>{{text}}</p>
         </div>
       {{/each}}
-      <form action="/campuses/addcampus" method="POST">
+      
+    {{#each campuses}}
+      <form action="/campuses/view/{{id}}/editcampus" method="POST">
+      <p>If there are errors with input, you will be redirected to this page and changes will not occur.</p>
         <div class="input-group">
           <label for="name">Name</label>
           <input type="text" name="name" id="name" class="input-box" placeholder="Name"
@@ -27,7 +30,10 @@
           <textarea name="description" id="description" class="input-box" placeholder="Description"
             rows="10">{{description}}</textarea>
         </div>
-        <input type="submit" value="Add Campus">
+        <input type="submit" value="Edit Campus">
       </form>
+      {{else}}
+        <button onclick ="window.history.back()">You entered info incorrectly, click here to go back</button>
+      {{/each}}
     </div>
   </section>
