@@ -1,23 +1,34 @@
 <section id="campuses" class="container">
-    <h1>Student</h1>
-
     {{#each students}}
+      <h1>Student</h1>
       <div class="campus">
       <h3>Student name: {{lastName}}, {{firstName}}</h3>
+      <p>Student ID: {{id}}</p>
       <p>Email: {{email}}</p>
       <p>gpa: {{gpa}}</p>
+      <p>Campus: {{campusid}}</p>
       <ul>
         <img src ='{{imageUrl}}'>
         <li></li>
       </ul>
       <a href="/students/view/{{id}}/editstudent">Edit</a>
       <br>
+      <br>
+      <form action="/students/view/{{id}}/addcampus" method="POST">
+      <label for="campusname">Add campus</label>
+      <br>
+        <input type="text" name="campusname" id="campusname" placeholder="campusname">
+        <br>
+        <input type="submit" value="Add campus">
+      </form>
+      <br>
+      <br>
       <form method='POST' action ='/students/view/{{id}}?_method=DELETE'>
         <button type = 'submit'> Delete </button>
       </form>
       </p>
-    </div>
     {{else}}
       <p>No students available</p>
     {{/each}}
+  </section>
   </section>
