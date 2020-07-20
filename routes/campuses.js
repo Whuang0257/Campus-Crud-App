@@ -31,8 +31,7 @@ router.get('/view/:id/editcampus', (req, res) => {
   Campus.findByPk(req.params.id)
     .then(campus => {
       res.render('editcampus', {
-      include: [Students],
-      campuses: [campus],
+      campuses: [campus]
       })})
     .catch(err => res.render('error', {error: err}))
 });
